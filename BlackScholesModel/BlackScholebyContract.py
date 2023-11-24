@@ -4,7 +4,7 @@ import yfinance as yf
 from scipy.stats import norm
 import matplotlib.pyplot as plt
 
-df = pd.read_csv('datasets\2023-11-09_MSFT.csv')
+df = pd.read_csv('datasets\merged_test.csv')
 df = df.dropna(subset=['stockPrice'])
 df['Datetime'] = pd.to_datetime(df['Datetime'], errors='coerce', utc=True)
 df['Datetime'] = df['Datetime'].dt.tz_localize(None)
@@ -13,7 +13,7 @@ df['Datetime'] = pd.to_datetime(df['Datetime']).dt.tz_localize(None)
 df['Expiration_Date'] = pd.to_datetime(df['Expiration_Date'])
 df['Time_to_Expiration'] = (
     df['Expiration_Date'] - df['Datetime']) / pd.Timedelta(days=365)
-df = df[df['contractSymbol'] == 'MSFT231110C00360000']
+df = df[df['contractSymbol'] == 'SPY230818C00432000']
 
 def volatility(ticker, start_date, end_date):
     """
@@ -76,7 +76,7 @@ plt.plot(new_df['Datetime'], new_df['Theoretical_Value'], label='Theoretical_Val
 # 添加圖例
 plt.legend()
 # 添加標題和軸標籤 
-plt.title('MSFT231110C00360000')
+plt.title('SPY230818C00432000')
 plt.xlabel('Datetime')
 plt.ylabel('Value')
 
