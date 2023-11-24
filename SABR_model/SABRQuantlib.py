@@ -13,7 +13,7 @@ df['Datetime'] = pd.to_datetime(df['Datetime']).dt.tz_localize(None)
 df['Expiration_Date'] = pd.to_datetime(df['Expiration_Date'])
 df['Time_to_Expiration'] = (
     df['Expiration_Date'] - df['Datetime']) / pd.Timedelta(days=365)
-df = df[df['contractSymbol'] == 'AAPL231027C00180000']
+df = df[df['contractSymbol'] == 'SPY230818C00432000']
 
 
 
@@ -73,7 +73,7 @@ plt.plot(new_df['Datetime'], new_df['Theoretical_Value'], label='Theoretical_Val
 # 添加圖例
 plt.legend()
 # 添加標題和軸標籤 
-plt.title('AAPL231027C00180000')
+plt.title('SPY230818C00432000')
 plt.xlabel('Datetime')
 plt.ylabel('Value')
 
