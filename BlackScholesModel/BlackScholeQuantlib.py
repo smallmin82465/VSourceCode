@@ -19,7 +19,7 @@ def volatility(ticker, start_date, end_date):
     return volatility
 
 ##
-df = pd.read_csv('datasets\2023-11-09_MSFT.csv')
+df = pd.read_csv('datasets\merged_test.csv')
 df = df.dropna(subset=['stockPrice'])
 df["Datetime"] = pd.to_datetime(df["Datetime"])
 df["Expiration_Date"] = pd.to_datetime(df["Expiration_Date"])
@@ -61,7 +61,7 @@ for index, row in df.iterrows():
     df.at[index, "Option_Price"] = option.NPV()
  
 
-df = df[df['contractSymbol'] == 'AAPL231027P00180000']
+df = df[df['contractSymbol'] == 'SPY230818C00432000']
 new_df = pd.DataFrame({
     'Datetime': df['Datetime'],
     'Actual_Value': df['Close'],
@@ -82,7 +82,7 @@ plt.plot(new_df['Datetime'], new_df['Theoretical_Value'], label='Theoretical_Val
 # 添加圖例
 plt.legend()
 # 添加標題和軸標籤 
-plt.title('AAPL231027P00180000')
+plt.title('SPY230818C00432000')
 plt.xlabel('Datetime')
 plt.ylabel('Value')
 # 顯示圖形
