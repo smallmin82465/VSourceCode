@@ -40,11 +40,7 @@ SABR_model:
  
 OptionGetPip:
 
- 包含yfinace option 爬蟲
- 
-             stock 爬蟲
-             
-讀取csv等
+ 包含yfinace option 爬蟲   stock 爬蟲  讀取csv等
 
 
 SqliteGUI:
