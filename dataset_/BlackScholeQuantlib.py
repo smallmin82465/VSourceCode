@@ -19,7 +19,7 @@ def volatility(ticker, start_date, end_date):
     return volatility
 
 ##
-df = pd.read_csv('AAPL1.csv')
+df = pd.read_csv('merged_test.csv')
 df = df.dropna(subset=['stockPrice'])
 df["Datetime"] = pd.to_datetime(df["Datetime"])
 df["Expiration_Date"] = pd.to_datetime(df["Expiration_Date"])
