@@ -25,7 +25,7 @@ def volatility(ticker, start_date, end_date):
 v = volatility('SPY', '2022-09-01', '2023-09-01')
 
 
-df = pd.read_csv('merged_test.csv')
+df = pd.read_csv('datasets\merged_test.csv')
 df = df.dropna(subset=['stockPrice'])
 df['Datetime'] = pd.to_datetime(df['Datetime']).dt.tz_localize(None)
 df['Expiration_Date'] = pd.to_datetime(df['Expiration_Date'])
