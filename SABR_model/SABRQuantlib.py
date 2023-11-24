@@ -7,7 +7,7 @@ import yfinance as yf
 from scipy.stats import norm
 import matplotlib.pyplot as plt
 # 讀取資料
-df = pd.read_csv('AAPL1.csv')
+df = pd.read_csv('datasets\merged_test.csv')
 df = df.dropna(subset=['stockPrice'])
 df['Datetime'] = pd.to_datetime(df['Datetime']).dt.tz_localize(None)
 df['Expiration_Date'] = pd.to_datetime(df['Expiration_Date'])
